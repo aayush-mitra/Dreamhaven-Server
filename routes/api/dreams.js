@@ -22,7 +22,7 @@ router.post('/create', (req, res) => {
                 message: "Error: Date Dream Already Created"
             });
         }
-
+ 
         Dream.create({
             dateString,
             user: user._id,
@@ -105,12 +105,12 @@ router.get('/get', (req, res) => {
 
 router.post('/edit-content', (req, res) => {
     const {description, dreamId} = req.body;
-
+    console.log(req.body)
     Dream.findOne({_id: dreamId}).then(dream => {
         if (!dream) {
             return res.json({
                 success: false,
-                message: "Error: Server Error"
+                message: "Error: Server Error 1"
             });
         }
 
@@ -123,13 +123,13 @@ router.post('/edit-content', (req, res) => {
         }).catch(err => {
             return res.json({
                 success: false,
-                message: "Error: Server Error"
+                message: "Error: Server Error 2"
             });
         })
     }).catch(err => {
         return res.json({
             success: false,
-            message: "Error: Server Error"
+            message: "Error: Server Error 3"
         });
     })
 })

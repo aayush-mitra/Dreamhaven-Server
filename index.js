@@ -2,6 +2,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const app = express()
+const cors = require('cors')
 
 const users = require('./routes/api/users.js')
 const dreams = require('./routes/api/dreams.js')
@@ -14,6 +15,8 @@ mongoose.connect(process.env.MONGO_URI).then((conn) => {
     console.log(`Error: ${err.messaeg}`)
     process.exit(1)
 })
+
+app.use(cors())
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
