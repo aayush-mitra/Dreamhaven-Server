@@ -7,7 +7,7 @@ const StorySchema = new mongoose.Schema({
     },
     dream: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Dream"
+        ref: "Dreams"
     },
     title: {
         type: String,

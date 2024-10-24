@@ -1,6 +1,7 @@
 const express = require('express')
 const User = require('../../models/User')
 const UserSession = require('../../models/UserSession')
+const Dream = require('../../models/Dream')
 const router = express.Router()
 
 router.get('/', (req, res) => {
@@ -170,6 +171,28 @@ router.get('/get', (req, res) => {
             success: false,
             message: "Error: Server Error"
         });
+    })
+})
+
+router.get('/all_dreams', (req, res) => {
+    const {userId} = req.query;
+
+    Dream.find({user: userId}).then(dreams => {
+        if (!dreams || dreams.length === 0) {
+            return res.json({
+                success: false,
+                message: "Error: Server Error1"
+            })
+        }
+        return res.json({
+            success: true,
+            dreams
+        })
+    }).catch(err => {
+        return res.json({
+            success: false,
+            message: "Error: Server Error1"
+        })
     })
 })
 

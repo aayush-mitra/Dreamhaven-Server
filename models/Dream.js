@@ -14,43 +14,43 @@ const DreamSchema = new mongoose.Schema({
     },
     startTime: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     endTime: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     dreamLength: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     lucidity: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     mood: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     vividness: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     characters: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     location: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     themes: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     repetition: {
         type: String,
-        default: 'N/A'
+        default: ''
     },
     quality: {
         type: Number,
